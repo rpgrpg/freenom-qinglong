@@ -1,51 +1,48 @@
 #!/usr/bin/env python3
 # _*_ coding:utf-8 _*_
 # 觉得好用请点 *star*，谢谢！作者仓库:https://github.com/rpgrpg/freenom-qinglong
-# 设置定时任务，例如每周一早5点运行：corn * 5 * * 2
+# 设置定时任务，例如每周一早8点运行：corn * 8 * * 2
+# 配置环境变量：export freenom_usr=""，""内为你自己的FREENOM的用户名
+# 配置环境变量：export freenom_psd=""，""内为你自己的FREENOM密码
 # V20228
 
 import requests
-import re
+import re,os
 try:
     from notify import send
 except:
     print("upload notify failed")
     exit(-1)
-
-# 在 '' 中填写freenom用户名，示例：username = '87654321@qq.com'
-username = ''
-# 在 '' 中填写freenom密码，示例：password = '12345678'
-password = ''
-
-# 登录
+try:
+    # 没有设置环境变量可以在此处直接填写freenom用户名，示例：username = '87654321@qq.com'
+    username = os.environ["freenom_usr"]
+    # 没有设置环境变量可以在此处直接填写freenom密码，示例：password = '12345678'
+    password = os.environ["freenom_psd"]
+except:
+    print("Pls config export in config.sh OR fill in username&password.")
+# 登录url
 LOGIN_URL = 'https://my.freenom.com/dologin.php'
-# 域名状态
+# 域名状态url
 DOMAIN_STATUS_URL = 'https://my.freenom.com/domains.php?a=renewals'
-# 续期
+# 续期url
 RENEW_DOMAIN_URL = 'https://my.freenom.com/domains.php?submitrenewals=true'
 
-# token匹配
+# 登录匹配
 token_ptn = re.compile('name="token" value="(.*?)"', re.I)
-# 域名匹配
-domain_info_ptn = re.compile(
+omain_info_ptn = re.compile(
     r'<tr><td>(.*?)</td><td>[^<]+</td><td>[^<]+<span class="[^<]+>(\d+?).Days</span>[^&]+&domain=(\d+?)">.*?</tr>',
     re.I)
-# 登录匹配
 login_status_ptn = re.compile('<a href="logout.php">Logout</a>', re.I)
-
-# 请求头
 sess = requests.Session()
 sess.headers.update({
     'user-agent':
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/103.0.5060.134 Safari/537.36'
 })
-
-# 登录
 sess.headers.update({
     'content-type': 'application/x-www-form-urlencoded',
     'referer': 'https://my.freenom.com/clientarea.php'
 })
-# 开启网络登录
+
 try:  # 异常捕捉
     r = sess.post(LOGIN_URL, data={'username': username, 'password': password})
 
