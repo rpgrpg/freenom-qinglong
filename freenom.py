@@ -36,7 +36,7 @@ RENEW_DOMAIN_URL = 'https://my.freenom.com/domains.php?submitrenewals=true'
 
 # 登录匹配
 token_ptn = re.compile('name="token" value="(.*?)"', re.I)
-omain_info_ptn = re.compile(
+domain_info_ptn = re.compile(
     r'<tr><td>(.*?)</td><td>[^<]+</td><td>[^<]+<span class="[^<]+>(\d+?).Days</span>[^&]+&domain=(\d+?)">.*?</tr>',
     re.I)
 login_status_ptn = re.compile('<a href="logout.php">Logout</a>', re.I)
