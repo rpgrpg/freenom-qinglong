@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 # _*_ coding:utf-8 _*_
-# 觉得好用请点 *star*，谢谢！作者仓库:https://github.com/rpgrpg/freenom-qinglong
-# 设置定时任务，例如每周一早8点运行：corn * 8 * * 2
+
+# 觉得好用请点 *star*，作者仓库:https://github.com/rpgrpg/freenom-qinglong.git
+
+# 重要！！请手动修改下面corn的值，第一个*取值范围0~59，第二位的5建议改为8~22之间的数字，否则你将会在凌晨5点被通知吵醒
+# Caution: Pls replace the corn, 1st * to 0~59, 2nd 5 to 8~22
+'''
+corn: * 5 * * 2
+new Env:('freenom域名自动续期');
+'''
 # 配置环境变量：export freenom_usr=""，""内为你自己的FREENOM的用户名
 # 配置环境变量：export freenom_psd=""，""内为你自己的FREENOM密码
 # V20228
