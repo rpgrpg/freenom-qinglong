@@ -81,7 +81,6 @@ domains_list = []
 renew_domains_succeed = []
 renew_domains_failed = []
 
-
 # 域名续期
 for domain, days, renewal_id in domains:
     days = int(days)
@@ -105,10 +104,8 @@ for domain, days, renewal_id in domains:
             exit(-1)
         if r.text.find('Order Confirmation') != -1:
             renew_domains_succeed.append(domain)
-            print(domain, ' renew succeed')
         else:
             renew_domains_failed.append(domain)
-            print(domain, ' renew failed')
 
 # 输出结果并推送通知
 print(domains_list, renew_domains_succeed, renew_domains_failed)
