@@ -6,7 +6,7 @@
 # 重要！！请手动修改下面corn的值，第一个*取值范围0~59，第二位的5建议改为8~22之间的数字，否则你将会在凌晨5点被通知吵醒
 # Caution: Pls replace the corn, 1st * to 0~59, 2nd 5 to 8~22
 '''
-cron: 0~59 7 * * 2
+cron: 0-59 7 * * 2
 new Env:('freenom域名自动续期');
 '''
 # 配置环境变量：export freenom_usr=""，""内为你自己的FREENOM的用户名
