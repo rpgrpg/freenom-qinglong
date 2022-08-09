@@ -13,4 +13,4 @@ Automatically Renew Freenom Domain for qinglong panle.
 # 示例：
 # export freenom_usr="12345678@qq.com"
 # export freenom_psd="76543210"
-也可以在freenom.py文件中直接修改username和password为自己的值。
+也可以在freenom.py文件中直接修改username和password的值。
