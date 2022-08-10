@@ -3,8 +3,6 @@
 
 # 觉得好用请点 *star*，作者仓库:https://github.com/rpgrpg/freenom-qinglong.git
 
-# 重要！！请手动修改下面corn的值，第一个*取值范围0~59，第二位的5建议改为8~22之间的数字，否则你将会在凌晨5点被通知吵醒
-# Caution: Pls replace the corn, 1st * to 0~59, 2nd 5 to 8~22
 '''
 cron: * 7 * * 2
 new Env:('freenom域名自动续期');
