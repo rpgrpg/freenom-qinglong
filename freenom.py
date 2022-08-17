@@ -171,6 +171,6 @@ if __name__ == '__main__':
     for i in range(len(usrs)):
         print(f'***第{i + 1}个账号: {usrs[i]} ***\n')
         # 随机暂停几秒，错峰使用
-        time.sleep(random.randint(1,8))
+        time.sleep(random.randint(1,30))
         main(usrs[i], psds[i])
 
