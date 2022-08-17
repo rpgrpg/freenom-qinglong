@@ -151,7 +151,7 @@ def main(usr,psd):
     # 输出结果并推送通知
     print(domains_list, renew_domains_succeed, renew_domains_failed)
     if renew_domains_failed:
-        send(f'共有{len(renew_domains_failed)}个域名:{renew_domains_failed}续期失败，','请及时手动操作确认！\n')
+        send(f'域名：{renew_domains_failed}，共有{len(renew_domains_failed)}个域名续期失败，','请及时手动操作确认！\n')
     else:
         if renew_domains_succeed:
             send(f'账号{usr}共有{len(domains_list)}个域名:\n{domains_list}', f'域名: {renew_domains_succeed}全部续期成功！')
