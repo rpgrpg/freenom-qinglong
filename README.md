@@ -11,7 +11,7 @@ Automatically Renew Freenom Domain for qinglong panle.
 # 修改配置文件config.sh，添加环境变量
 点击面板左侧的“配置文件”，然后将文件拉到最后，添加如下两行：export freenom_usr=""，""内为你自己的FREENOM的用户名，export freenom_psd=""，""内为你自己的FREENOM密码，多号用 & 分隔
 # 示例：
-# export freenom_usr="123@qq.com&abc@163.com&someone@hotmail.com"
+# export freenom_usr="123@qq.com&abc@163.com&one@gmail.com"
 # export freenom_psd="76543210&abcdefg&a1b2c3d4"
 # 密码带“&”的，改密码或添加变量export change_split="",""里为分隔符
 也可以在freenom.py文件中直接修改username和password的值。
