@@ -13,6 +13,6 @@ Automatically Renew Freenom Domain for qinglong panle.
 # 示例：
 # export freenom_usr="123@qq.com&abc@163.com&one@gmail.com"
 # export freenom_psd="76543210&abcdefg&a1b2c3d4"
-# 密码带“&”的，改密码或添加变量export change_split="",""里为分隔符
-也可以在freenom.py文件中直接修改username和password的值。
+# 密码带“&”的，改密码或添加变量export change_split="",把分隔符放""里
+支持在freenom.py文件中直接添加username和password，适用crontab等其它定时任务。
 # freenom是目前全网唯一的免费顶级域名注册网站了，大家轻撸，避免滥用。
