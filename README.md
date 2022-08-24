@@ -1,6 +1,6 @@
 # freenom-qinglong 域名自动续期-青龙面板
 Automatically Renew Freenom Domain for qinglong panle.
-# 已支持多号，建议删除旧的定时任务，再重新拉取。
+# 已支持多号，建议删除旧的定时任务，重新拉取。
 本人没有多号，无法测试。有bug请及时反馈，谢谢！
 # How to use食用方法：
 本程序适用于青龙面板https://github.com/whyour/qinglong.git
