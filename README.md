@@ -5,9 +5,9 @@ Automatically Renew Freenom Domain for qinglong panle.
 # How to use食用方法：
 本程序适用于青龙面板https://github.com/whyour/qinglong.git
 # 新版青龙：
-订阅管理-新建订阅-名称：自定义，链接：https://github.com/rpgrpg/freenom-qinglong.git ，定时规则：自定义，确定之后，点击运行按钮运行一次即可。
+订阅管理-新建订阅-名称：自定义，选择单个文件,链接：https://raw.githubusercontent.com/rpgrpg/freenom-qinglong/main/freenom.py ，定时规则：自定义，确定之后，点击运行按钮运行一次即可。
 # 旧版青龙：
-无订阅管理，定时任务-新建任务-名称：自定义，命令：ql repo https://github.com/rpgrpg/freenom-qinglong.git "freenom.py" ，定时规则：自定义，确定之后，点击运行按钮运行一次即可。
+无订阅管理，定时任务-新建任务-名称：自定义，命令：ql raw https://raw.githubusercontent.com/rpgrpg/freenom-qinglong/main/freenom.py ，定时规则：自定义，确定之后，点击运行按钮运行一次即可。
 # 修改配置文件config.sh，添加环境变量
 点击面板左侧的“配置文件”，然后将文件拉到最后，添加如下两行：export freenom_usr=""，""内为你自己的FREENOM的用户名，export freenom_psd=""，""内为你自己的FREENOM密码，多号用 & 分隔
 # 示例：
