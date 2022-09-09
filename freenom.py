@@ -10,7 +10,7 @@ new Env:('freenom多帐户续期');
 # 配置环境变量：export freenom_usr=""，多号用&分割，示例：123@qq.com&abc@163.com
 # 配置环境变量：export freenom_psd=""，账号对应密码同样用&分割，示例：miam1&mima2
 # 密码含&的，设置export change_split="",示例：export change_split=","代表用逗号分割
-# V20228a
+# V20229
 
 import requests
 import re,os,time,random
