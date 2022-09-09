@@ -149,16 +149,16 @@ def main(usr,psd):
             else:
                 renew_domains_failed.append(domain)
 
-            # 输出结果并推送通知
-        print(domains_list, renew_domains_succeed, renew_domains_failed)
-        if renew_domains_failed:
-            send(f'注意！！！您有{len(renew_domains_failed)}个域名续期失败，请及时手动操作确认！', f'续期失败的域名：{renew_domains_failed}')
+    # 输出结果并推送通知
+    print(domains_list, renew_domains_succeed, renew_domains_failed)
+    if renew_domains_failed:
+        send(f'注意！！！您有{len(renew_domains_failed)}个域名续期失败，请及时手动操作确认！', f'续期失败的域名：{renew_domains_failed}')
+    else:
+        if renew_domains_succeed:
+            send(f'账号{usr}共有{len(domains_list)}个域名:\n{domains_list}', f'域名: {renew_domains_succeed}全部续期成功！')
         else:
-            if renew_domains_succeed:
-                send(f'账号{usr}共有{len(domains_list)}个域名:\n{domains_list}', f'域名: {renew_domains_succeed}全部续期成功！')
-            else:
-                send('恭喜，两周内没有需要续期的域名', f'账号{usr}共有{len(domains_list)}个域名:\n{domains_list}')
-        return
+            send('恭喜，两周内没有需要续期的域名', f'账号{usr}共有{len(domains_list)}个域名:\n{domains_list}')
+    return
 
 if __name__ == '__main__':
     usrs = get_usr()
