@@ -68,7 +68,7 @@ def get_usr():
 def get_psd():
     if "freenom_psd" in os.environ:
         if "change_spilt" in os.environ:
-            psd_list = os.environ["freenom_psd"].split(os.environ["change_split"])
+            psd_list = os.environ["freenom_psd"].split(os.environ["change_spilt"])
             return psd_list
         else:
             # 配置环境变量：export FREENOM_PSD=""，多号用&分割
