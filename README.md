@@ -3,7 +3,7 @@ Automatically Renew Freenom Domain for qinglong panle.
 # 已支持多号，建议删除旧的定时任务，重新拉取。
 本人没有多号，无法测试。有bug请及时反馈，谢谢！
 # How to use食用方法：
-本程序适用于青龙面板https://github.com/whyour/qinglong.git  ；也支持独立运行，但无法收到通知推送。
+本程序适用于青龙面板https://github.com/whyour/qinglong.git  ；也支持独立运行，但没有通知推送。
 # 新版青龙：
 订阅管理-新建订阅-名称：自定义，选择单个文件,链接：https://raw.githubusercontent.com/rpgrpg/freenom-qinglong/main/freenom.py ，定时规则：自定义，确定之后，点击运行按钮运行一次即可。
 # 旧版青龙：
