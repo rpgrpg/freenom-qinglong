@@ -10,7 +10,7 @@ new Env:('freenom多帐户续期');
 # 配置环境变量：export freenom_usr=""，多号用&分割，示例：123@qq.com&abc@163.com
 # 配置环境变量：export freenom_psd=""，账号对应密码同样用&分割，示例：miam1&mima2
 # 密码含&的，设置export change_split="",示例：export change_split=","代表用逗号分割
-# V20229
+# V20231
 
 import requests
 import re,os,time,random
@@ -67,7 +67,7 @@ def get_usr():
 # 获取密码
 def get_psd():
     if "freenom_psd" in os.environ:
-        if "change_spilt" in os.environ:
+        if "change_split" in os.environ:
             psd_list = os.environ["freenom_psd"].split(os.environ["change_split"])
             return psd_list
         else:
@@ -155,7 +155,7 @@ def main(usr,psd):
         send(f'注意！！！您有{len(renew_domains_failed)}个域名续期失败，请及时手动操作确认！', f'续期失败的域名：{renew_domains_failed}')
     else:
         if renew_domains_succeed:
-            send(f'账号{usr}共有{len(domains_list)}个域名:\n{domains_list}', f'域名: {renew_domains_succeed}全部续期成功！')
+            send(f'账号{usr}共有{len(domains_list)}个域名:\n{domains_list}', f'域名: {renew_domains_succeed}续期成功！')
         else:
             send('恭喜，两周内没有需要续期的域名', f'账号{usr}共有{len(domains_list)}个域名:\n{domains_list}')
     return
