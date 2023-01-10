@@ -10,7 +10,7 @@ new Env:('freenom多帐户续期');
 # 配置环境变量：export freenom_usr=""，多号用&分割，示例：123@qq.com&abc@163.com
 # 配置环境变量：export freenom_psd=""，账号对应密码同样用&分割，示例：miam1&mima2
 # 密码含&的，设置export change_split="",示例：export change_split=","代表用逗号分割
-# V20231
+# V20231a
 
 import requests
 import re,os,time,random
@@ -18,7 +18,7 @@ try:
     from notify import send
 except:
     print("upload notify failed")
-    exit(-1)
+
 
 # 没有设置环境变量可以在此处直接填写freenom用户名，多号用&分割，示例：'123@qq.com&abc@163.com'
 username = ''
@@ -121,9 +121,9 @@ def main(usr,psd):
     renew_domains_failed = []
     # 域名续期
     for domain, days, renewal_id in domains:
-        days = int(days)
-        domains_list.append(f'域名:{domain}还有{days}天到期~')
-        if days < 14:
+        day_s = int(days)
+        domains_list.append(f'域名:{domain}还有{day_s}天到期~')
+        if day_s < 14:
             # 避免频繁操作
             time.sleep(6)
             sess.headers.update({
